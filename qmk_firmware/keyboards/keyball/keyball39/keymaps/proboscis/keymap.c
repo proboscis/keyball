@@ -69,3 +69,23 @@ void oledkit_render_info_user(void) {
     keyball_oled_render_layerinfo();
 }
 #endif
+
+// enum custom_keycodes {
+//   KC_MY_BTN1 = KEYBALL_SAFE_RANGE;
+//   KC_MY_BTN2;
+//   KC_MY_BTN3;
+//   KC_MY_BTN4;
+//   KC_MY_BTN5;
+// };
+
+
+
+// bool process_record_user(uint16_t keycode, keyrecord_t * record){
+//   switch(keycode){
+//     case KC_MY_BTN1:
+//     case KC_MY_BTN2:
+//     case KC_MY_BTN3:
+//     case KC_MY_BTN4:
+//     case KC_MY_BTN5:
+//   }
+// }
