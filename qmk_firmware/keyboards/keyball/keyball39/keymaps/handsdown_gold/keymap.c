@@ -20,14 +20,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "quantum.h"
 
+enum combo_events {
+  SEND_WH,
+};
+
+
 const uint16_t PROGMEM yw_is_wh[] = {KC_Y, KC_W, COMBO_END};
 const uint16_t PROGMEM jg_is_z[] = {KC_J, KC_G, COMBO_END};
 const uint16_t PROGMEM gp_is_qu[] = {KC_G, KC_P, COMBO_END};
 combo_t key_combos[] = {
-    COMBO(yw_is_wh, SEND_STRING("WH")), // i want to send "WH"
+    [SEND_WH] = COMBO_ACTION(yw_is_wh),
     COMBO(jg_is_z, KC_Z), 
     COMBO(gp_is_qu, KC_Q)
 };
+
+void process_combo_event(uint16_t combo_index, bool pressed) {
+  switch(combo_index) {
+    case SEND_WH:
+      if (pressed) {
+        SEND_STRING("WH");
+      }
+      break;
+  }
+}
+
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
