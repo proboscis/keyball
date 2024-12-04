@@ -38,7 +38,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
   switch(combo_index) {
     case SEND_WH:
       if (pressed) {
-        SEND_STRING("WH");
+        SEND_STRING("wh");
       }
       break;
   }
